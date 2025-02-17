@@ -97,7 +97,7 @@ html {
           will-change: transform;
         }
 
-        &:hover::before {
+        &:hover::before, &.active::before {
           transform: scaleX(1);
           transform-origin: left;
         }
