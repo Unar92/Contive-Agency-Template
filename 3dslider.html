@@ -44,6 +44,7 @@
 <body>
 
     <div class="banner">
+        <div class="modal"></div>
         <div class="slider" style="--quantity: 10">
             <div class="item" style="--position: 1"><img src="assets/images/3dslider/dragon_1.jpg" alt=""></div>
             <div class="item" style="--position: 2"><img src="assets/images/3dslider/dragon_2.jpg" alt=""></div>
@@ -64,6 +65,30 @@
             <div class="model"></div>
         </div>
     </div>
+
+    <script>
+        const slider = document.querySelector('.banner .slider');
+        const items = slider.children;
+        const quantity = parseInt(getComputedStyle(slider).getPropertyValue('--quantity'));
+        const modal = document.querySelector('.banner .modal');
+
+        // when clicked on any of the item, the image will be displayed in the modal
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener('click', () => {
+                slider.classList.add('paused');
+                index = i;
+                const image = items[i].querySelector('img');
+                modal.style.backgroundImage = `url(${image.src})`;
+                modal.classList.add('active');
+
+
+                modal.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                    slider.classList.remove('paused');
+                });
+            });
+        }
+    </script>
     
 </body>
 </html>
