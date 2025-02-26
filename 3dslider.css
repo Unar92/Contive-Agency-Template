@@ -137,6 +137,13 @@
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
       )
       translateZ(300px);
+
+    &:hover {
+        transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px) scale(1.1);
+    }
   }
   .banner .content h1 {
     text-align: center;
@@ -166,6 +173,13 @@
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
       )
       translateZ(180px);
+
+    &:hover {
+        transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px) scale(1.1);
+    }
   }
   .banner .content h1 {
     font-size: 5em;
